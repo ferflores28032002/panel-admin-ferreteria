@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Estilos CSS de Bootstrap 5 ========================================-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- Añadimos los archivos de Font Awesome ================================= -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/variables__colores.css">
+
+</head>
+<body class="d-flex justify-content-center align-items-center bg-primary" 
+    style="height:100vh;">
+
+    <!--============================================================================ -->
+    <div class="wave">
+        <!-- <p class="derechos">Todos los derechos Reservados</p> -->
+    </div>
+    <div class="wave2">
+        <!-- <p class="derechos">Todos los derechos Reservados</p> -->
+    </div>
+
+    
+    <div class="contenedor w-100 bg-light">
+        <form> 
+            <div class="caja__imagen__logo w-100 text-center pb-3">
+                <img src="imagenes/logo4.png" alt="Avatar de Medico">
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Nombre Usuario">
+            <label for="floatingInput"><i class="fa-solid fa-user text-primary"></i> Usuario</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="contrasena" class="form-control" id="pass" placeholder="Contraseña">
+            <label for="floatingPassword"><i class="fa-solid fa-lock text-primary"></i> Contraseña</label>
+            </div>
+
+            <div class="alerta mt-2">
+                <div class="alert alert-danger" role="alert">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span class="alerta2"></span>
+                </div>
+            </div>
+            
+
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-primary p-2" id="btn" type="button">Acceder</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Codigo JavaScript de Bootstrap 5 =========================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- Añadimos el JavaScript para las funcionalidades =========================== -->
+    <script src="js/main.js"></script>
+</body>
+</html>

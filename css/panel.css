@@ -1,0 +1,153 @@
+/* Importamos la fuente ===== POPPINS ======================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
+
+
+/* Reseteamos todos los margenes por defecto de navegador  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: var(--colorBackground);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}´
+
+.contenedor__principal{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.contenedor__sidevar {
+    width: 13rem;
+    min-height: 100vh;
+    background-color: #212529;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    height: 100%;
+
+}
+
+/* Logo sidevar ===================== */
+.sidevar__logo {
+    justify-content: space-between;
+    padding-left: 0.7em;
+    padding: 1.3em 1em;
+    position: relative;
+}
+
+
+.sidevar__items {
+    flex-direction: column;
+}
+.cerrar__menu {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    font-size: 1.2em;
+    display: none;
+}
+
+.sidevar__items a {
+    width: 100%;
+    padding: 0.6em 1em;
+    color: var(--color20);
+}
+.sidevar__items i{
+    font-size: 1.4em;
+}
+
+.sidevar__items span:last-child {
+    padding-left: 0.5em
+}
+
+
+.sidevar__items a:hover{
+    background-color: var(--color20);
+    color: var(--color30);
+}
+
+.contenedor__principal.active a span:last-child{
+    display: none;
+}
+
+.contenedor__principal.active .contenedor__sidevar{
+    width: auto;
+}
+
+.contenedor__principal.active .sidevar__items a{
+    font-size: 1.2em;
+    
+}
+.contenedor__principal .sidevar__logo img{
+    width: 110px;
+}
+.contenedor__principal.active  .sidevar__logo img{
+    width: 40px;
+}
+
+/* El nav */
+.box-sha {
+    box-shadow: var(--box-shadow);
+    height: 100%;
+
+}
+.sidevar__logo span:first-child{
+    flex-direction: column;
+}
+
+
+.caja__progreso  {
+    position: relative;
+    width:100%;
+    height: 4rem;
+    margin-bottom: 4rem;
+}
+
+.fixed {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 200;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.fixednav {
+    position: fixed;
+    top: 0;
+    left:0;
+    padding-left: 13rem;
+    width: 100%;
+    z-index: 100;
+}
+.fixed-2 {
+
+    padding-top: 4rem;
+}
+.contenedor__principal.active .fixed-2{
+    padding-left: 5rem;
+}
+.contenedor__principal.active .fixednav{
+    padding-left: 4rem;
+}
+.contenedor__principal.active .sidevar__logo{
+    padding-bottom: 5rem;
+}
+
+.MesesAnteriores{
+    display: none;
+}
+.MesesAnteriores.active {
+    display: block;
+}
+

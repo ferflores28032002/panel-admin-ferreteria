@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo</title>
+    
+    <!-- Estilos CSS de Bootstrap 5 ========================================-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- Añadimos los archivos de Font Awesome ================================= -->
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/panel.css">
+    <link rel="stylesheet" href="../css/variables__colores.css">
+    <link rel="stylesheet" href="../css/progresos.css">
+</head>
+<body>
+
+
+  <!-- Modal de realizar compras ========================================================== -->
+
+  <div class="modal" tabindex="-1" id="modalRealizarCompra">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title text-light">Realizar Nueva Compra</h5>
+          <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Completa los datos de tu Compra</p>
+            <div class="row">
+                <div class="col-12">
+                    <label for="name" class="form-control-label">Nombre Usuario</label>
+                    <input type="text" class="form-control" id="name">
+                  </div>
+                  <div class="col-12 mt-3">
+                    <label for="pass" class="form-control-label">Contraseña</label>
+                    <input type="text" class="form-control" id="pass">
+                  </div>
+                  <div class="col-12 mt-3 mb-4">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Asignarle Rol</option>
+                        <option value="1">administrador</option>
+                        <option value="2">Cajero</option>
+                        <option value="3">Asistente de ventas</option>
+                      </select>
+                  </div>
+                  <div class="col-12 mt-3 mb-4">
+                    <p>Asignale Permisos al Usuario</p>
+                    
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">Ingresar</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Modificar</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Eliminar</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Realizar ventas</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Crear Usuarios</label>
+                    </div>
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="modal-footer bg-primary">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+
+  <!-- Comienzo de estructura ================================================ -->
+  
+  
+  <div class="contenedor__principal d-flex h-100 w-100">
+
+    <div id="incluir__sidevar">
+
+    </div>
+
+    <!-- Segunda caja -hija del contenedor ===================================== -->
+    <div class=" w-100"> 
+        <!-- Incluimos el archivo ============================= -->
+        <div id="incluir__nav">
+
+        </div>
+
+        <div class="fixed-2">
+          <div class="container-fluid mt-5">
+              <div class="card bg-primary mb-3">
+                <div class="card-body text-light">
+                  Sistema De Inventario FerrePlus
+                </div>
+            </div>
+  
+            <div class="row mb-3">
+              <div class="d-flex gap-2">
+                <button class="btn btn-danger" onclick="modal7();"><i class="fa-solid fa-calendar-check"></i> Realizar Compra</button>
+                <button class="btn btn-success"><i class="fa-solid fa-comment-dollar"></i> Finanzas</button>
+              </div>
+  
+            </div>
+  
+            <!-- Cards de los porcentajes ================== -->
+              <div class="row">
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Enero</h6>
+  
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-chart-1"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 50.45</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Febrero</h6>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-chart-2"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 54.90</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Marzo</h6>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-chart-3"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 390.45</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Abril</h6>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-chart-4"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 360.45</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                          
+            <!-- Cards de los porcentajes ================== -->
+            <div class="row">
+              <div class="col-md-3 mb-1" >
+                <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                  <div class="card-body">
+                    <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Mes de Mayo</h6>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="caja__progreso ">
+                          <div id="circular-chart1"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 450.45</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-3 mb-1" >
+                <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                  <div class="card-body">
+                    <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Mes de Junio</h6>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="caja__progreso ">
+                          <div id="circular-chart2"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 900.90</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-1" >
+                <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                  <div class="card-body">
+                    <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Mes de Julio</h6>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="caja__progreso ">
+                          <div id="circular-chart3"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 250.45</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-1" >
+                <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                  <div class="card-body">
+                    <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Mes de Agosto</h6>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="caja__progreso ">
+                          <div id="circular-chart4"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 134.45</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-4 mb-4">
+              <div class="col-md-12">
+                <button class="btn btn-danger text-light" onclick="verInfo();">Meses que se vendio más el año anterior <i class="fa-solid fa-sack-dollar text-success"></i></button>
+              </div>
+            </div>
+
+
+            <!-- Otras 4 card de las estadisticas de ventas ====================== -->
+            <div class=" MesesAnteriores">
+              <div class="row">
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Marzo</h6>
+  
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-char1"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 450.45</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Septiembre</h6>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-char2"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 950.90</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Noviembre</h6>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-char3"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 520.45</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-1" >
+                  <div class="card" style="width: 16rem; box-shadow: var(--box-shadow);">
+                    <div class="card-body">
+                      <h5 class="card-title">Ganancias <i class="fa-solid fa-sack-dollar text-success"></i></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Mes de Diciembre</h6>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="caja__progreso ">
+                            <div id="circular-char4"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-dollar-sign"></i> 930.45</h6>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-store"></i> Más Información</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid mt-5">
+                <div class="card bg-success mb-3">
+                  <div class="card-body text-light">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Estadisticas de ventas del año anterior
+                  </div>
+              </div>
+            
+            </div>
+          </div>
+        
+        </div>
+    </div>
+ </div>
+    
+
+
+
+
+
+
+
+  <!-- Añadimos los script de javaScript ========================== -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  
+      <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+  <!-- Añadimos los script de javaScript ========================== -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="../js/main2.js"></script>
+    <script src="../js/main.3.js"></script>
+    <script src="../js/main4.js"></script>
+    <script src="../js/main5.js"></script>
+</body>
+</html>
